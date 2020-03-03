@@ -1,0 +1,71 @@
++----------------------+
+| README: formatting.h |
++----------------------+
+
+formatting.h is a header file containing ANSI escape sequences to help C
+programmers make their terminal output look better. All sequences come from
+Wikipedia (https://en.wikipedia.org/wiki/ANSI_escape_code). 
+
+Inspiration for this file came from the powerlevel10k ZSH theme by romkatv
+(https://github.com/romkatv/powerlevel10k).
+
+Some terminals might not support bright colors or italic characters. Use these
+with caution.
+
+
++-----------+
+| Important |
++-----------+
+
+Once you use a code, the terminal will continue to use that code until it gets
+another code. Please be courteous of your end user's terminal preferences by
+resetting colors and formatting prior to exiting the program.
+
+
++----------------+
+| Usage Examples |
++----------------+
+
+Since these codes are simply strings, you can use a string replacement in
+printf() (%s) to add the strings.
+
+Q) Print a line of bold, red text:
+A) printf("%s%sHello, world!%s\n", FG_RED, BOLD, RESET);
+
+Q) Print a line of blue background, green foreground text:
+A) printf("%s%sBlue background, green foreground%s", BG_BLUE, FG_GREEN, RESET);
+
+Q) Print an arrow for a user to enter their input:
+A) printf("%s input %s%s ", REV, RESET, ARROW);
+
+
++--------------+
+| License Info |
++--------------+
+
+This code is licensed under the MIT license, with the additional stipulation
+that derivatives must give partial credit to the original author.
+
+
++-------------+
+| MIT License |
++-------------+
+
+Copyright 2020 QueueBot
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
